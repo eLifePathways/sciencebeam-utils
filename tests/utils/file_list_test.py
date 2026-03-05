@@ -1,7 +1,6 @@
 import os
-from tempfile import NamedTemporaryFile
+from tempfile import NamedTemporaryFile, TemporaryDirectory
 from unittest.mock import patch
-from backports.tempfile import TemporaryDirectory
 
 import pytest
 
