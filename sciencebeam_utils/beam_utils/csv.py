@@ -1,9 +1,8 @@
 from __future__ import absolute_import
 
 import logging
+import csv
 from io import StringIO
-
-from backports import csv  # pylint: disable=no-name-in-module
 
 from six import text_type
 
