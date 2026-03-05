@@ -16,6 +16,11 @@ beam = [
     "apache-beam[gcp]>=2.34.0",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sciencebeam_utils*"]
+exclude = ["docker*"]
+
 [dependency-groups]
 dev = [
     "flake8>=7.3.0",
