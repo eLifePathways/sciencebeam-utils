@@ -42,10 +42,10 @@ class TestGetPickableException:
             raise NotSerializableException("not serializable")
         except NotSerializableException as _exception:
             exception = _exception
-        assert exception.__traceback__ is not None
-        serializable_exception = get_serializable_exception(exception)
-        assert serializable_exception != exception
-        assert serializable_exception.__traceback__ == exception.__traceback__
+            assert exception.__traceback__ is not None
+            serializable_exception = get_serializable_exception(exception)
+            assert serializable_exception != exception
+            assert serializable_exception.__traceback__ == exception.__traceback__
 
     def test_should_return_serializable_exception_replacement_with_serializable_cause(self):
         base_exception = SerializableException("base")
