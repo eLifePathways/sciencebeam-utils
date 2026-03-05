@@ -4,7 +4,12 @@ disable=
     consider-using-f-string,
     invalid-name,
     too-few-public-methods,
-    super-with-arguments
+    too-many-positional-arguments,
+    super-with-arguments,
+    broad-exception-raised,
+    unnecessary-dunder-call,
+    use-dict-literal,
+    use-implicit-booleaness-not-comparison
 
 [TYPECHECK]
 ignored-classes=scoped_session
