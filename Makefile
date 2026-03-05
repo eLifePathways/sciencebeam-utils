@@ -32,11 +32,11 @@ dev-venv: venv-create dev-install
 
 
 dev-flake8:
-	$(PYTHON) -m flake8 sciencebeam_utils tests setup.py
+	$(PYTHON) -m flake8 sciencebeam_utils tests
 
 
 dev-pylint:
-	$(PYTHON) -m pylint sciencebeam_utils tests setup.py
+	$(PYTHON) -m pylint sciencebeam_utils tests
 
 
 dev-lint: dev-flake8 dev-pylint
