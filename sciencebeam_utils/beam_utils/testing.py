@@ -242,6 +242,9 @@ class MockFileSystem(AbstractFileSystem):
     def mkdirs(self, path):
         get_logger().debug('mkdirs: %s (no-op)', path)
 
+    def report_lineage(self, path, unused_lineage):
+        get_logger().debug('report_lineage: %s (no-op)', path)
+
 
 def mock_get_filesystem(*_):
     return MockFileSystem()
