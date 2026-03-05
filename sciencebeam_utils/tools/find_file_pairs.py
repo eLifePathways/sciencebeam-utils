@@ -1,7 +1,6 @@
 import argparse
+import csv
 import logging
-
-from backports import csv  # pylint: disable=no-name-in-module
 
 from six import text_type
 

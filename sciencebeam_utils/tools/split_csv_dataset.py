@@ -1,4 +1,5 @@
 import argparse
+import csv
 import logging
 import errno
 from math import trunc
@@ -6,8 +7,6 @@ from random import shuffle
 from datetime import datetime
 from itertools import chain
 from typing import List
-
-from backports import csv  # pylint: disable=no-name-in-module
 
 from six import text_type
 
