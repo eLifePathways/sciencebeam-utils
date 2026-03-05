@@ -2,8 +2,9 @@ DOCKER_COMPOSE_DEV = docker-compose
 DOCKER_COMPOSE_CI = docker-compose -f docker-compose.yml -f docker-compose.ci.yml
 DOCKER_COMPOSE = $(DOCKER_COMPOSE_DEV)
 
-VENV = venv
-PIP = $(VENV)/bin/pip
+VENV = .venv
+UV = VIRTUAL_ENV=$(VENV) uv
+UV_PIP = $(UV) pip
 PYTHON = $(VENV)/bin/python
 
 RUN = $(DOCKER_COMPOSE) run --rm sciencebeam-utils
@@ -20,14 +21,11 @@ venv-clean:
 
 
 venv-create:
-	python3 -m venv $(VENV)
+	$(UV) venv $(VENV)
 
 
 dev-install:
-	$(PIP) install -r requirements.build.txt
-	$(PIP) install -r requirements.txt
-	$(PIP) install -r requirements.prereq.txt
-	$(PIP) install -r requirements.dev.txt
+	$(UV) sync --all-extras
 
 
 dev-venv: venv-create dev-install
