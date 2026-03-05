@@ -3,9 +3,7 @@ disable=
     missing-docstring,
     consider-using-f-string,
     invalid-name,
-    no-self-use,
     too-few-public-methods,
-    bad-continuation,
     super-with-arguments
 
 [TYPECHECK]
