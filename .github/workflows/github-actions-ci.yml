@@ -13,6 +13,31 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install dependencies
+        run: make dev-install
+
+      - name: Linting
+        run: make dev-lint
+
+      - name: Unit tests
+        run: make dev-pytest
+
+      - uses: mtkennerly/dunamai-action@v1
+        with:
+          env-var: VERSION
+          args: --style semver --no-metadata
+      - run: echo $VERSION
