@@ -16,6 +16,12 @@ beam = [
     "apache-beam[gcp]>=2.34.0",
 ]
 
+[tool.setuptools.package-data]
+sciencebeam_utils = ["py.typed"]
+
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["sciencebeam_utils*"]
